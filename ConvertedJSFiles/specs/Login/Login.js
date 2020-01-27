@@ -3,12 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var protractor_1 = require("protractor");
 describe('call Functions of all test cases in this folder ', function () {
     log();
-    // index();
     //article();
     Labelox();
-    //search();
-    //publication();
     //source();
+    //logout();
+    //testScript();
 });
 function log() {
     describe('Login ', function () {
@@ -36,27 +35,23 @@ function login() {
     protractor_1.element(protractor_1.by.xpath('/html/body/app-root/app-user-login/div/app-sign-in/form/button')).click();
     protractor_1.browser.sleep(10000);
 }
-function search() {
-    var process = require('./search');
-    console.log('====Test case for Search ====');
-}
 function article() {
-    var process = require('./Article');
+    var process = require('../Article/Article');
     console.log('====Test case for Article ====');
 }
 function Labelox() {
-    var process = require('./Article2');
+    var process = require('../Login/Logout');
     console.log('====Test case for Article ====');
 }
-function index() {
-    var process = require('./Index');
-    console.log('====Test case for Index xml ====');
-}
-function publication() {
-    var process = require('./Publication');
-    console.log('====welcome in Publication====');
-}
 function source() {
-    var process = require('./Source');
+    var process = require('../Sources/Source');
+    console.log('====welcome in source====');
+}
+function logout() {
+    var process = require('../Login/Logout');
+    console.log('====welcome in source====');
+}
+function testScript() {
+    var process = require('../TestScript/TestScripts');
     console.log('====welcome in source====');
 }

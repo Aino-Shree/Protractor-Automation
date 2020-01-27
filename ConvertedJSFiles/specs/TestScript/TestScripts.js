@@ -1,52 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var protractor_1 = require("protractor");
-function LabeloxDetails() {
-    describe('call Functions ', function () {
-        it('Article Test cases', function () {
-            //LabelOx('Shree Bharate');
-            //Logout();
+function TestScript() {
+    describe('Test scripts validate Functions ', function () {
+        it('Test Scripts ', function () {
             TestScripts();
             //NewScripts('shreeaino5');
             //InUse('Leggo');
-            InDraft('IlSecolo');
+            //InDraft('IlSecolo');
         });
-    });
-}
-//Labelox
-function LabelOx(ProfileName) {
-    //Click on Label Image-Labelox
-    protractor_1.element(protractor_1.by.className('HeaderIcon cursorPointer')).click();
-    protractor_1.browser.driver.sleep(5000);
-    protractor_1.browser.getAllWindowHandles().then(function (handles) {
-        protractor_1.browser.switchTo().window(handles[1]);
-        protractor_1.browser.getCurrentUrl().then(function (text) {
-            expect(text.toString()).toBe(protractor_1.browser.params.baseUrl + 'r/LabelOx/LabelOx.jsp#/mypage');
-            console.log("---Open LabelOx--- ");
-            protractor_1.browser.driver.sleep(5000);
-            protractor_1.element(protractor_1.by.className('account-circle mate-icons mat-icon material-icons')).click();
-            protractor_1.browser.driver.sleep(2000);
-            var profile = protractor_1.element(protractor_1.by.className('account-holder mat-menu-item'));
-            profile.getText().then(function (Text) {
-                expect(Text.toString()).toEqual(ProfileName);
-                console.log("Labelox Profile is open... ");
-                protractor_1.browser.driver.sleep(3000);
-            });
-            protractor_1.browser.driver.close();
-            protractor_1.browser.switchTo().window(handles[0]);
-            protractor_1.browser.driver.sleep(5000);
-            console.log("---Article pannel is opened--- ");
-        });
-    });
-}
-//Logout
-function Logout() {
-    protractor_1.element(protractor_1.by.className('HeaderIconLogOut cursorPointer')).click();
-    protractor_1.browser.driver.sleep(5000);
-    protractor_1.browser.getCurrentUrl().then(function (text) {
-        expect(text.toString()).toBe(protractor_1.browser.params.baseUrl + 'login.jsp#/');
-        console.log("---Logout Articulate--- ");
-        protractor_1.browser.driver.sleep(5000);
     });
 }
 //Test scripts window
@@ -131,4 +93,4 @@ function InDraft(scriptName) {
         protractor_1.browser.navigate().back();
     });
 }
-module.exports = new LabeloxDetails();
+module.exports = new TestScript();

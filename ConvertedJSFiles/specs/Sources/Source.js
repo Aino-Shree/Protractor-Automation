@@ -123,33 +123,6 @@ function newSource(newsource) {
     protractor_1.browser.driver.sleep(3000);
     sourceList();
 }
-//if source is already exit
-function duplicateSource() {
-    /*
-       sourceNameError.getText().then(function(Text:String){
-        expect('Source name already exists').toEqual (Text.toString());
-            });
-     
-            sourcename.sendKeys(newsource);
-            element(<Locator>by.className('conn-view-button conn-view-buttonRight')).click();
-            browser.driver.sleep(2000);
-    
-           browser.getCurrentUrl().then(function(text:string){
-                expect(text.toString()).toBe(browser.params.baseUrl+'#newChannel');
-                console.log("---new source is save--- ")
-                browser.driver.sleep(5000);
-                });
-    
-            //cancel source
-            element(<Locator>by.className('conn-view-button-cancel conn-view-buttonLeft')).click();
-            browser.driver.sleep(3000);
-            browser.getCurrentUrl().then(function(text:string){
-                expect(text.toString()).toBe(browser.params.baseUrl+'#sources');
-                console.log("---new source is canceled--- ")
-                browser.driver.sleep(5000);
-                });
-              */
-}
 // add new channel website
 function newChannelWebsite(sourceName) {
     protractor_1.element(protractor_1.by.className('addButton')).click();
@@ -170,6 +143,7 @@ function newChannelWebsite(sourceName) {
         console.log("---New Channel editing is save--- ");
         protractor_1.browser.driver.sleep(5000);
     });
+    // THIS CODE FOR CHECK THE ALREADY CREATED SOURCE WEBSITE
     //     var channelName=element(<Locator>by.className('GF51MMUCCJ GF51MMUCEJ GF51MMUCFJ'))
     //     channelName.getText().then(function(Text:String){
     //     expect(Text.toString()).toEqual (sourceName+'_Website'); 
@@ -242,6 +216,7 @@ function newChannelFTP(url, username, password, sourceName) {
     protractor_1.browser.driver.sleep(1000);
     protractor_1.element(protractor_1.by.className('conn-view-button conn-view-buttonRight')).click();
     protractor_1.browser.driver.sleep(3000);
+    // THIS CODE FOR CHECK THE ALREADY CREATED SOURCE FTP
     // var channelName=element(<Locator>by.className('GF51MMUCCJ GF51MMUCEK GF51MMUCFJ'))
     // channelName.getText().then(function(Text:String){
     // expect(Text.toString()).toEqual (sourceName+'_FTP_file.tuttosport.com'); 
@@ -273,6 +248,7 @@ function newChannelSFTP(url, username, password, sourceName) {
     protractor_1.browser.driver.sleep(1000);
     protractor_1.element(protractor_1.by.className('conn-view-button conn-view-buttonRight')).click();
     protractor_1.browser.driver.sleep(3000);
+    // THIS CODE FOR CHECK THE ALREADY CREATED SOURCE SFTP
     // var channelName=element(<Locator>by.xpath('/html/body/table/tbody/tr/td/div/div[2]/div[2]/div/div[2]/div/div[2]/table[1]/tbody[1]/tr[3]/td[1]/div'))
     // channelName.getText().then(function(Text:String){
     // expect(Text.toString()).toEqual (sourceName+'_SFTP_aino.extrapola.com'); 

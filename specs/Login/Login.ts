@@ -3,14 +3,11 @@ import { Locator } from 'protractor/built/locators';
 
 describe ('call Functions of all test cases in this folder ',()=>{
   log();
- // index();
  //article();
-  Labelox();
-  //search();
-  //publication();
+  //Labelox();
  //source();
-
- 
+ //logout();
+//testScript();
 })
 
 
@@ -44,32 +41,30 @@ element(<Locator>by.xpath('/html/body/app-root/app-user-login/div/app-sign-in/fo
 
 
 
-function search(){
-  var process=require('./search');
-  console.log('====Test case for Search ====')
-}
 
 function article(){
-  var process=require('./Article');
+  var process=require('../Article/Article');
   console.log('====Test case for Article ====')
 }
 
 function Labelox(){
-  var process=require('./Article2');
+  var process=require('../Login/Logout');
   console.log('====Test case for Article ====')
 }
 
-function index(){
-  var process=require('./Index');
-  console.log('====Test case for Index xml ====')
-}
 
-function publication(){
-  var process=require('./Publication');
-  console.log('====welcome in Publication====')
-}
 function source(){
-  var process=require('./Source');
+  var process=require('../Sources/Source');
   console.log('====welcome in source====')
 }
+
+function logout(){
+  var process=require('../Login/Logout');
+  console.log('====welcome in source====')
+}
+function testScript(){
+  var process=require('../TestScript/TestScripts');
+  console.log('====welcome in source====')
+}
+
 

@@ -6,15 +6,15 @@ function TotalArticles() {
         it('Article Test cases', function () {
             OpenArticle('Gazzetta del Sud');
             // notPresentArticle();
-            calender('2020/01/02');
-            // articlelist();
-            // original();
-            // firstpdf();
-            //nextbutton();
-            //   originalPdf();
-            // HighlightedPdf();
-            // CroppedPdf();
-            //addArticle('a','i','n','o','aino soft koregoan park pune',88);
+            // calender('2020/01/02');
+            //articlelist();
+            original();
+            firstpdf();
+            nextbutton();
+            originalPdf();
+            HighlightedPdf();
+            CroppedPdf();
+            // addArticle('a','i','n','o','aino soft koregoan park pune',88);
             //deleteArticle('i','5',87);
             // browseraw();
         });
