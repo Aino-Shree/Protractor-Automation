@@ -3,10 +3,10 @@ import { Locator } from 'protractor/built/locators';
 
 describe ('call Functions of all test cases in this folder ',()=>{
   log();
- //article();
+ article();
   //Labelox();
  //source();
- //logout();
+logout();
 //testScript();
 })
 
@@ -27,34 +27,34 @@ describe ('call Functions of all test cases in this folder ',()=>{
     };
 
 function login(){ 
-// element(<Locator>by.className('Login_basicTextbox')).sendKeys(browser.params.emailUser);
-// element(<Locator>by.xpath('/html/body/table/tbody/tr/td/table/tbody/tr[5]/td/table/tbody/tr/td[2]/input')).sendKeys(browser.params.passUser);
-// element(<Locator>by.xpath('/html/body/table/tbody/tr/td/table/tbody/tr[9]/td/button')).click();
-//   browser.sleep(5000);
+element(<Locator>by.className('Login_basicTextbox')).sendKeys(browser.params.emailUser);
+element(<Locator>by.xpath('/html/body/table/tbody/tr/td/table/tbody/tr[5]/td/table/tbody/tr/td[2]/input')).sendKeys(browser.params.passUser);
+element(<Locator>by.xpath('/html/body/table/tbody/tr/td/table/tbody/tr[9]/td/button')).click();
+  browser.sleep(5000);
 
-  // new container build 
-  element(<Locator>by.xpath('//*[@id="mat-input-0"]')).sendKeys(browser.params.emailUser);
-element(<Locator>by.xpath('//*[@id="mat-input-1"]')).sendKeys(browser.params.passUser);
-element(<Locator>by.xpath('/html/body/app-root/app-user-login/div/app-sign-in/form/button')).click();
-  browser.sleep(10000);
+  //new container build 
+//   element(<Locator>by.xpath('//*[@id="mat-input-0"]')).sendKeys(browser.params.emailUser);
+// element(<Locator>by.xpath('//*[@id="mat-input-1"]')).sendKeys(browser.params.passUser);
+// element(<Locator>by.xpath('/html/body/app-root/app-user-login/div/app-sign-in/form/button')).click();
+//   browser.sleep(10000);
 }
 
 
 
 
 function article(){
-  var process=require('../Article/Article');
+  var process=require('../Article/ArticleListingTest');
   console.log('====Test case for Article ====')
 }
 
 function Labelox(){
-  var process=require('../Login/Logout');
+  var process=require('../LabeloxTest/Labelox');
   console.log('====Test case for Article ====')
 }
 
 
 function source(){
-  var process=require('../Sources/Source');
+  var process=require('../Sources/SourceListingTest');
   console.log('====welcome in source====')
 }
 

@@ -6,17 +6,16 @@ function TotalArticles() {
         it('Article Test cases', function () {
             OpenArticle('Gazzetta del Sud');
             // notPresentArticle();
-            // calender('2020/01/02');
+            calender('2020/01/27', 'Gazzetta del Sud');
             //articlelist();
             original();
             firstpdf();
-            nextbutton();
-            originalPdf();
-            HighlightedPdf();
-            CroppedPdf();
+            nextbutton('Santelli a governare la Calabria', 'Il virus cinese si fa più forte ora si “espande” oltre la');
+            // originalPdf('10667561943984');
+            // HighlightedPdf('6PG9RE1p');
+            // CroppedPdf('6PG9RE1p');
             // addArticle('a','i','n','o','aino soft koregoan park pune',88);
             //deleteArticle('i','5',87);
-            // browseraw();
         });
     });
 }
@@ -55,7 +54,7 @@ function notPresentArticle() {
     });
 }
 // select a perticular date
-function calender(date) {
+function calender(date, publicationName) {
     protractor_1.browser.waitForAngularEnabled(false);
     var cal = protractor_1.element(protractor_1.by.className('visibilityDateBox'));
     cal.click();
@@ -63,8 +62,12 @@ function calender(date) {
     cal.sendKeys(date);
     protractor_1.browser.driver.sleep(1000);
     console.log('====calender=====');
-    var pub = protractor_1.element(protractor_1.by.xpath('//div[contains(text(), "Gazzetta del Sud")]')).click();
-    protractor_1.browser.driver.sleep(3000);
+    //selecting publication name
+    var xpth = "//div[contains(text(),'" + publicationName + "')]";
+    protractor_1.element(protractor_1.by.xpath(xpth)).click();
+    protractor_1.browser.driver.sleep(5000);
+    // var pub= element(<Locator>by.xpath('//div[contains(text(), "Gazzetta del Sud")]')).click();
+    // browser.driver.sleep(3000);
     //   // click on edition cosenza
     // var icon1=element(<Locator>by.xpath('/html/body/table/tbody/tr/td/div/div[2]/div[2]/table/tbody/tr/td[1]/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr[3]/td/div/div/div/div[16]/div/div[2]'));
     // icon1.click()
@@ -229,7 +232,7 @@ function firstpdf() {
     });
 }
 // click get Next/Preview button is working
-function nextbutton() {
+function nextbutton(nextArticle, previewArticle) {
     // next button click for next article on same page
     var nextTitle = protractor_1.element(protractor_1.by.xpath('/html/body/table/tbody/tr/td/div/div[2]/div[2]/table/tbody/tr/td[2]/table/tbody/tr/td/div/div/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/div/div/div[2]/div/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/button'));
     nextTitle.click();
@@ -237,7 +240,7 @@ function nextbutton() {
     // next button expect statement for checking 2nd article title
     var ark = protractor_1.element(protractor_1.by.xpath('/html/body/table/tbody/tr/td/div/div[2]/div[2]/table/tbody/tr/td[2]/table/tbody/tr/td/div/div/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/div/div/div[2]/div/div/div/div[1]/div[2]'));
     ark.getText().then(function (Text) {
-        expect('«Il tendone è abusivo» Bloccato il veglione di Capodanno').toEqual(Text.toString());
+        expect(nextArticle).toEqual(Text.toString());
         console.log("Next 2 nd Articles is present on same page");
         protractor_1.browser.driver.sleep(3000);
     });
@@ -249,20 +252,20 @@ function nextbutton() {
     // Preview button expect statement for checking 2nd article title
     var ark = protractor_1.element(protractor_1.by.xpath('/html/body/table/tbody/tr/td/div/div[2]/div[2]/table/tbody/tr/td[2]/table/tbody/tr/td/div/div/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/div/div/div[2]/div/div/div/div[1]/div[2]'));
     ark.getText().then(function (Text) {
-        expect('Coesione e orgoglio, l’appello di Mattarella a “riscoprirci” italiani').toEqual(Text.toString());
+        expect(previewArticle).toEqual(Text.toString());
         console.log("Preview 1st Articles is present on same page");
         protractor_1.browser.driver.sleep(3000);
     });
 }
 //Click on Original PDFs
-function originalPdf() {
+function originalPdf(blobId) {
     var originalpdf = protractor_1.element(protractor_1.by.xpath('/html/body/table/tbody/tr/td/div/div[2]/div[2]/table/tbody/tr/td[2]/table/tbody/tr/td/div/div/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/div/div/div[2]/div/div/div/table/tbody/tr/td[1]/table/tbody/tr/td[3]/button'));
     originalpdf.click();
     protractor_1.browser.driver.sleep(3000);
     protractor_1.browser.getAllWindowHandles().then(function (handles) {
         protractor_1.browser.switchTo().window(handles[1]);
         protractor_1.browser.getCurrentUrl().then(function (text) {
-            expect(text.toString()).toBe(protractor_1.browser.params.baseUrl + 'DownloadBlob?blobId=9708837393600-1-null-application/pdf');
+            expect(text.toString()).toBe(protractor_1.browser.params.baseUrl + 'DownloadBlob?blobId=' + blobId + '-1-null-application/pdf');
             console.log("---Original PDF opened--- ");
             protractor_1.browser.driver.sleep(5000);
             protractor_1.browser.driver.close();
@@ -273,14 +276,14 @@ function originalPdf() {
     });
 }
 //Click on Highlighted PDFs
-function HighlightedPdf() {
+function HighlightedPdf(articleGuid) {
     var Highlightedpdf = protractor_1.element(protractor_1.by.xpath('/html/body/table/tbody/tr/td/div/div[2]/div[2]/table/tbody/tr/td[2]/table/tbody/tr/td/div/div/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/div/div/div[2]/div/div/div/table/tbody/tr/td[1]/table/tbody/tr/td[4]/button'));
     Highlightedpdf.click();
     protractor_1.browser.driver.sleep(3000);
     protractor_1.browser.getAllWindowHandles().then(function (handles) {
         protractor_1.browser.switchTo().window(handles[1]);
         protractor_1.browser.getCurrentUrl().then(function (text) {
-            expect(text.toString()).toBe(protractor_1.browser.params.baseUrl + 'ari/XtrapolaSpace/eXtrapolaApp/eXtrapola/fetchHighlightedPdf?ResponseType=TEXT_FILE&articleGuid=Yx0TssFP');
+            expect(text.toString()).toBe(protractor_1.browser.params.baseUrl + 'ari/XtrapolaSpace/eXtrapolaApp/eXtrapola/' + 'fetchHighlightedPdf?ResponseType=TEXT_FILE&articleGuid=' + articleGuid);
             console.log("---Highlighted PDF opened--- ");
             protractor_1.browser.driver.sleep(5000);
             protractor_1.browser.driver.close();
@@ -291,14 +294,14 @@ function HighlightedPdf() {
     });
 }
 //Click on Cropped PDFs
-function CroppedPdf() {
+function CroppedPdf(articleGuid) {
     var Croppedpdf = protractor_1.element(protractor_1.by.xpath('/html/body/table/tbody/tr/td/div/div[2]/div[2]/table/tbody/tr/td[2]/table/tbody/tr/td/div/div/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/div/div/div[2]/div/div/div/table/tbody/tr/td[1]/table/tbody/tr/td[5]/button'));
     Croppedpdf.click();
     protractor_1.browser.driver.sleep(2000);
     protractor_1.browser.getAllWindowHandles().then(function (handles) {
         protractor_1.browser.switchTo().window(handles[1]);
         protractor_1.browser.getCurrentUrl().then(function (text) {
-            expect(text.toString()).toBe(protractor_1.browser.params.baseUrl + 'ari/XtrapolaSpace/eXtrapolaApp/eXtrapola/fetchCroppedPdf?ResponseType=TEXT_FILE&articleGuid=Yx0TssFP');
+            expect(text.toString()).toBe(protractor_1.browser.params.baseUrl + 'ari/XtrapolaSpace/eXtrapolaApp/eXtrapola/' + 'fetchCroppedPdf?ResponseType=TEXT_FILE&articleGuid=' + articleGuid);
             console.log("---Cropped PDF opened--- ");
             protractor_1.browser.driver.sleep(3000);
             protractor_1.browser.driver.close();
@@ -306,16 +309,6 @@ function CroppedPdf() {
             protractor_1.browser.driver.sleep(3000);
             console.log("---Article pannel is opened--- ");
         });
-    });
-}
-// click on browse raw content
-function browseraw() {
-    var browseraw = protractor_1.element(protractor_1.by.xpath('/html/body/table/tbody/tr/td/div/div[2]/div[2]/table/tbody/tr/td[2]/table/tbody/tr/td/div/div/table/tbody/tr[1]/td/table/tbody/tr/td[3]/div/div'));
-    browseraw.click();
-    protractor_1.browser.driver.sleep(2000);
-    protractor_1.browser.getCurrentUrl().then(function (text) {
-        expect(text.toString()).toBe(protractor_1.browser.params.baseUrl + '#browseContent');
-        console.log("---Browse row content--- ");
     });
 }
 //delete Article

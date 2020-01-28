@@ -29,8 +29,8 @@ exports.config = {
        defaultTimeoutInterval: 60000
    },
    params:{
-       //baseUrl:'http://10.10.10.102:8080/Sources/',
-       baseUrl:'http://213.133.103.90:8091/Sources_candidate/',
+       baseUrl:'http://10.10.10.102:8080/Sources/',
+      // baseUrl:'http://213.133.103.90:8091/Sources_candidate/',
        emailUser:'bhagyashri@ainosoft.com',
        passUser:'shri2019'
    },

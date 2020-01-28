@@ -3,10 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var protractor_1 = require("protractor");
 describe('call Functions of all test cases in this folder ', function () {
     log();
-    //article();
-    Labelox();
+    article();
+    //Labelox();
     //source();
-    //logout();
+    logout();
     //testScript();
 });
 function log() {
@@ -25,26 +25,26 @@ function log() {
 }
 ;
 function login() {
-    // element(<Locator>by.className('Login_basicTextbox')).sendKeys(browser.params.emailUser);
-    // element(<Locator>by.xpath('/html/body/table/tbody/tr/td/table/tbody/tr[5]/td/table/tbody/tr/td[2]/input')).sendKeys(browser.params.passUser);
-    // element(<Locator>by.xpath('/html/body/table/tbody/tr/td/table/tbody/tr[9]/td/button')).click();
-    //   browser.sleep(5000);
-    // new container build 
-    protractor_1.element(protractor_1.by.xpath('//*[@id="mat-input-0"]')).sendKeys(protractor_1.browser.params.emailUser);
-    protractor_1.element(protractor_1.by.xpath('//*[@id="mat-input-1"]')).sendKeys(protractor_1.browser.params.passUser);
-    protractor_1.element(protractor_1.by.xpath('/html/body/app-root/app-user-login/div/app-sign-in/form/button')).click();
-    protractor_1.browser.sleep(10000);
+    protractor_1.element(protractor_1.by.className('Login_basicTextbox')).sendKeys(protractor_1.browser.params.emailUser);
+    protractor_1.element(protractor_1.by.xpath('/html/body/table/tbody/tr/td/table/tbody/tr[5]/td/table/tbody/tr/td[2]/input')).sendKeys(protractor_1.browser.params.passUser);
+    protractor_1.element(protractor_1.by.xpath('/html/body/table/tbody/tr/td/table/tbody/tr[9]/td/button')).click();
+    protractor_1.browser.sleep(5000);
+    //new container build 
+    //   element(<Locator>by.xpath('//*[@id="mat-input-0"]')).sendKeys(browser.params.emailUser);
+    // element(<Locator>by.xpath('//*[@id="mat-input-1"]')).sendKeys(browser.params.passUser);
+    // element(<Locator>by.xpath('/html/body/app-root/app-user-login/div/app-sign-in/form/button')).click();
+    //   browser.sleep(10000);
 }
 function article() {
-    var process = require('../Article/Article');
+    var process = require('../Article/ArticleListingTest');
     console.log('====Test case for Article ====');
 }
 function Labelox() {
-    var process = require('../Login/Logout');
+    var process = require('../LabeloxTest/Labelox');
     console.log('====Test case for Article ====');
 }
 function source() {
-    var process = require('../Sources/Source');
+    var process = require('../Sources/SourceListingTest');
     console.log('====welcome in source====');
 }
 function logout() {
