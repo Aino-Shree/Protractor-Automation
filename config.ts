@@ -24,7 +24,7 @@ exports.config = {
     
    },
    framework: 'jasmine',
-   specs: ['./specs/Login/Login.js'],
+   specs: ['./specs/loginValidation/Login.js'],
    jasmineNodeOpts: {
        defaultTimeoutInterval: 60000
    },

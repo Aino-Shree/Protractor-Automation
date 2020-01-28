@@ -43,27 +43,27 @@ element(<Locator>by.xpath('/html/body/table/tbody/tr/td/table/tbody/tr[9]/td/but
 
 
 function article(){
-  var process=require('../Article/ArticleListingTest');
+  var process=require('../articleValidation/ArticleListingTest');
   console.log('====Test case for Article ====')
 }
 
 function Labelox(){
-  var process=require('../LabeloxTest/Labelox');
+  var process=require('../labeloxTest/Labelox');
   console.log('====Test case for Article ====')
 }
 
 
 function source(){
-  var process=require('../Sources/SourceListingTest');
+  var process=require('../sourcesValidation/SourceListingTest');
   console.log('====welcome in source====')
 }
 
 function logout(){
-  var process=require('../Login/Logout');
+  var process=require('../loginValidation/Logout');
   console.log('====welcome in source====')
 }
 function testScript(){
-  var process=require('../TestScript/TestScripts');
+  var process=require('../testScriptValidation/TestScripts');
   console.log('====welcome in source====')
 }
 
