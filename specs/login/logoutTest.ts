@@ -1,4 +1,4 @@
-import { ElementFinder, browser, by, element, protractor,promise as wdpromise, WebDriver, WebElement, WebElementPromise } from 'protractor';
+import { browser, by, element } from 'protractor';
 import { Locator } from 'protractor/built/locators';
 //Labelox,Test script,Logout
 function Logout(){

@@ -8,7 +8,9 @@
     "npm": "^6.13.6",
     "protractor": "^5.4.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    
+  },
   "scripts": {
     "pretest": "npm run tsc",
     "test": "protractor ConvertedJSFiles/config.js",
