@@ -3,11 +3,11 @@ import { Locator } from 'protractor/built/locators';
 
 describe('call Functions of all test cases in this folder ', () => {
   login();
-  article();
-  Labelox();
-  source();
+ // article();
+ // Labelox();
+  //source();
   testScript();
-  logout();
+ // logout();
 })
 
 

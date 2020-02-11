@@ -6,17 +6,17 @@ function sourceTestCase() {
   describe('call Functions of sources', () => {
     it('sources', function () {
       getSourceList();
-       sourceListPrint(8);
-      addNewSource('shreeaino5');
-      searchSource('shreeaino5')
-      channelFTPValidation('shree@ftp', 'bhagyashri@ainosoft.com', 'shri2019');
-      newChannelWebsite('shreeaino5');
-      newChannelFTP('file.tuttosport.com', 'upromo009	', 'prvwsrl14894');
-      newChannelSFTP('aino.extrapola.com', 'aino', '&m@Z95wTeduMdPN%');
-      createdChannelWebsiteCheck('shreeaino5');
-      createdChannelFTPCheck('file.tuttosport.com', 'shreeaino5');
-      createdChannelSFTPCheck('aino.extrapola.com', 'shreeaino5');
-      editSource();
+      sourceListPrint(8);
+      // addNewSource('shreeaino5');
+      // searchSource('shreeaino5')
+      // channelFTPValidation('shree@ftp', 'bhagyashri@ainosoft.com', 'shri2019');
+      // newChannelWebsite('shreeaino5');
+      // newChannelFTP('file.tuttosport.com', 'upromo009	', 'prvwsrl14894');
+      // newChannelSFTP('aino.extrapola.com', 'aino', '&m@Z95wTeduMdPN%');
+      // createdChannelWebsiteCheck('shreeaino5');
+      // createdChannelFTPCheck('file.tuttosport.com', 'shreeaino5');
+      // createdChannelSFTPCheck('aino.extrapola.com', 'shreeaino5');
+      // editSource();
 
     });
   })

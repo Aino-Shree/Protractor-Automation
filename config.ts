@@ -24,7 +24,7 @@ exports.config = {
     framework: 'jasmine',
     specs: ['./specs/login/loginTest.js'],
     jasmineNodeOpts: {
-        defaultTimeoutInterval: 60000
+        defaultTimeoutInterval: 80000
     },
     params: {
         //baseUrl:'http://10.10.10.102:8080/Sources/',

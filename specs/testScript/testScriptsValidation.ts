@@ -6,8 +6,8 @@ function testScript() {
     it('Test Scripts ', function () {
       testScripts();
       newScripts('shreeaino1');
-      inUse('Leggo');
-      inDraft('IlSecolo');
+     // inUse('Leggo');
+     // inDraft('IlSecolo');
     });
   });
 }
@@ -45,10 +45,38 @@ function newScripts(Name) {
     expect('Draft >\n' + Name).toEqual(Text.toString());
     console.log("New script added...")
     browser.driver.sleep(2000);
-  });
+    var fs=element(<Locator>by.className('testScript-textArea'));
+ var contents=fs.readFileSync('../testScript/filename.txt','UTF-8');
+ contents.toString().split().forEach(function(line){
 
-  browser.navigate().back();
+ });
+  // MyClass obj=new MyClass();
+  // console.log(obj);
+
+  });
 }
+
+  /// <reference path="path/to/node.d.ts" />
+
+// class MyClass {
+//   File filename=new this.filename('../testScript/filename.txt');
+//   System.out.println('first:'+__filename.getAbsolutePath());
+  // private fs = require('fs');
+  // constructor() { }
+  // showFile() {
+  //     this.fs.readFile('../testScript/filename', function (data) {
+  //         console.log("Asynchronous read: " + data.toString());
+  //     });
+  // }
+//}
+
+// Usage
+// var obj = new MyClass();
+// obj.createFile();
+// obj.showFile();
+  browser.driver.sleep(2000);
+ 
+  browser.navigate().back();
 
 /**
  * click on Inuse script link
