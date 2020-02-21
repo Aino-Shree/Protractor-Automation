@@ -22,13 +22,12 @@ exports.config = {
 
     },
     framework: 'jasmine',
-    specs: ['./specs/login/loginTest.js'],
+    specs: ['./specs/login/LoginTest.js'],
     jasmineNodeOpts: {
         defaultTimeoutInterval: 80000
     },
     params: {
-        //baseUrl:'http://10.10.10.102:8080/Sources/',
-        baseUrl: 'http://213.133.103.90:8091/Sources_candidate/',
+        baseUrl: 'https://staged.ainosoft.com/Sources/',
         emailUser: 'bhagyashri@ainosoft.com',
         passUser: 'shri2019'
     },
